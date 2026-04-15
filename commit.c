@@ -206,7 +206,6 @@ int commit_create(const char *message, ObjectID *commit_id_out) {
 
     commit.tree = tree_id;
 
-    // ✅ FIX: set parent properly
     ObjectID parent_id;
     if (head_read(&parent_id) == 0) {
         commit.parent = parent_id;
