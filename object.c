@@ -136,7 +136,6 @@ int object_write(ObjectType type, const void *data, size_t len, ObjectID *id_out
     char dir[512];
     snprintf(dir, sizeof(dir), "%s/%.2s", OBJECTS_DIR, hex);
 
-    // ✅ FIX: handle mkdir properly
     if (mkdir(dir, 0755) != 0 && errno != EEXIST) {
         free(full);
         return -1;
